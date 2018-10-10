@@ -70,6 +70,9 @@ If you are able to help out with plugin development or wish to contribute insigh
 Review FAQ's and Help Video at the [WP Clone FAQ Page](http://members.wpacademy.com/wpclone-faq "WP Clone FAQ")
 
 == Changelog ==
+= 2.2.5 - 2018-10-10 =
+* Fixed: Import error
+
 = 2.2.4 - 2017-01-28 =
 * Updated: Admin area.
 * Updated: `Tested up to` tag.
