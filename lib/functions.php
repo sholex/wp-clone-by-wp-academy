@@ -65,6 +65,8 @@ function wpa_db_backup_wpdb($destination)
                 // string "0" - but we may need to explicitly set value to 0 for fields where this
                 // is not the default. This makes the output of this method identical to the 
                 // wpa_db_backup_direct() method
+
+                //our changes
                 $query .= (!isset($row[$j])) ? '"", ' : '"' . $wpdb->remove_placeholder_escape( esc_sql($row[$j]) ) . '", ';
             }
 
