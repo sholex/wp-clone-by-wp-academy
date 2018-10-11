@@ -11,7 +11,7 @@ class wpc_wpdb extends wpdb
 {
     
     // This is copied from the base class as its use_mysqli member is private
-    protected $use_mysqli = false;
+    protected $use_mysqli = true;
     
     public function __construct( $dbuser, $dbpassword, $dbname, $dbhost ) {
         parent::__construct($dbuser, $dbpassword, $dbname, $dbhost);
