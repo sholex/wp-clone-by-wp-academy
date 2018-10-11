@@ -26,7 +26,7 @@ class wpc_wpdb extends wpdb
         if ( function_exists( 'mysqli_connect' ) ) {
             if ( defined( 'WP_USE_EXT_MYSQL' ) ) {
                 $this->use_mysqli = ! WP_USE_EXT_MYSQL;
-            } elseif ( version_compare( phpversion(), '5.5', '>=' ) || ! function_exists( 'mysql_connect' ) ) {
+            } elseif ( version_compare( phpversion(), '5.5', '>=' ) || ! function_exists( 'mysqli_connect' ) ) {
                 $this->use_mysqli = true;
             } elseif ( false !== strpos( $GLOBALS['wp_version'], '-' ) ) {
                 $this->use_mysqli = true;
@@ -47,7 +47,7 @@ class wpc_wpdb extends wpdb
         }
         else
         {
-            return mysql_query($querystring, $this->get_dbh());
+            return mysqli_query($querystring, $this->get_dbh());
         }
     }
     
@@ -59,7 +59,7 @@ class wpc_wpdb extends wpdb
         }
         else
         {
-            return mysql_ping($this->get_dbh());
+            return mysqli_ping($this->get_dbh());
         }
     }
     
@@ -71,7 +71,7 @@ class wpc_wpdb extends wpdb
             $this->get_dbh()->close();
         }
         else{
-            return mysql_close($this->get_dbh());
+            return mysqli_close($this->get_dbh());
         }
     }
     
@@ -83,7 +83,7 @@ class wpc_wpdb extends wpdb
         }
         else
         {
-            return mysql_error($this->get_dbh());
+            return mysqli_error($this->get_dbh());
         }
     }
     
@@ -95,7 +95,7 @@ class wpc_wpdb extends wpdb
         }
         else
         {
-            return mysql_errno($this->get_dbh());
+            return mysqli_errno($this->get_dbh());
         }
     }
     
@@ -113,7 +113,7 @@ class wpc_wpdb extends wpdb
         }
         else
         {
-            return mysql_num_fields($result);
+            return mysqli_num_fields($result);
         }
     }
     
@@ -125,7 +125,7 @@ class wpc_wpdb extends wpdb
     
         }
         else {
-            return mysql_fetch_array($result);
+            return mysqli_fetch_array($result);
         }
     }
     
@@ -138,7 +138,7 @@ class wpc_wpdb extends wpdb
         }
         else
         {
-            return mysql_fetch_row($result);
+            return mysqli_fetch_row($result);
         }
     }
     
