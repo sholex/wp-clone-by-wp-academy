@@ -47,7 +47,7 @@ class wpc_wpdb extends wpdb
         }
         else
         {
-            return mysqli_query($querystring, $this->get_dbh());
+            return mysqli_query($this->get_dbh(), $querystring );
         }
     }
     
